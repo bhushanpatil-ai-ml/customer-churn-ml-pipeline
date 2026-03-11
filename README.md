@@ -1,8 +1,11 @@
 # Customer Churn Prediction ML Pipeline
 
+End-to-End Machine Learning Pipeline for Predicting Telecom Customer Churn.
+
 This project builds an end-to-end machine learning pipeline to predict whether a telecom customer is likely to churn.
 
 The model is trained on the Telco Customer Churn dataset and demonstrates the complete machine learning workflow from data preprocessing to model deployment preparation.
+
 
 ---
 

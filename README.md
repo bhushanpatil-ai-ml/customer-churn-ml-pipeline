@@ -14,18 +14,19 @@ This project builds a complete machine learning workflow to predict whether a te
 
 ## Table of Contents
 
-- [Problem Statement](#problem-statement)
-- [Objective](#objective)
-- [Dataset](#dataset)
-- [Technologies Used](#technologies-used)
-- [Machine Learning Models](#machine-learning-models)
-- [Project Workflow](#project-workflow)
-- [Evaluation Metrics](#evaluation-metrics)
-- [Project Structure](#project-structure)
-- [Results](#results)
-- [How to Run](#how-to-run-the-project)
-- [Future Improvements](#future-improvements)
-- [Author](#author)
+- Problem Statement
+- Objective
+- Dataset
+- Technologies Used
+- Machine Learning Models
+- Project Workflow
+- Evaluation Metrics
+- Model Performance
+- Project Structure
+- Results
+- How to Run
+- Future Improvements
+- Author
 
 ---
 
@@ -51,29 +52,28 @@ The main objectives of this project are:
 
 ## Dataset
 
-The dataset used in this project contains telecom customer information including demographics, services subscribed, and billing information.
+The dataset contains telecom customer information including demographics, services subscribed, and billing details.
 
-Typical dataset features include:
+Example features:
 
-- Customer demographics
-- Service subscriptions
-- Account information
-- Billing details
-- Contract type
-- Tenure
-- Monthly charges
-- Total charges
+- tenure
+- MonthlyCharges
+- TotalCharges
+- Contract
+- PaymentMethod
+- InternetService
+- Churn
 
 Target Variable:
 
+```
 Churn
+```
 
 ```
 0 → Customer stays
 1 → Customer leaves
 ```
-
-The dataset allows the model to learn patterns that indicate whether a customer will churn.
 
 ---
 
@@ -104,13 +104,11 @@ This project uses classification algorithms to predict churn:
 
 - Logistic Regression
 
-Logistic Regression serves as a strong baseline model for binary classification problems such as churn prediction.
+Logistic Regression is commonly used as a baseline model for binary classification problems.
 
 ---
 
 ## Project Workflow
-
-The machine learning pipeline follows these steps:
 
 1. Data Loading  
 2. Exploratory Data Analysis (EDA)  
@@ -125,7 +123,7 @@ The machine learning pipeline follows these steps:
 
 ## Evaluation Metrics
 
-To measure model performance, the following metrics are used:
+The following metrics are used to evaluate model performance:
 
 - Accuracy  
 - Precision  
@@ -134,7 +132,17 @@ To measure model performance, the following metrics are used:
 - Confusion Matrix  
 - Classification Report  
 
-These metrics provide insight into how well the model identifies churn customers.
+These metrics provide insight into how effectively the model predicts customer churn.
+
+---
+
+## Model Performance
+
+| Model | Accuracy | Precision | Recall | F1 Score |
+|------|---------|----------|-------|---------|
+| Logistic Regression | ~0.80 | ~0.78 | ~0.74 | ~0.76 |
+
+*Performance values may vary slightly depending on dataset split.*
 
 ---
 
@@ -163,37 +171,43 @@ customer-churn-ml-pipeline/
 
 ## Results
 
-The machine learning model successfully predicts telecom customer churn based on customer behavior and account-related features.
+The machine learning model successfully predicts telecom customer churn based on behavioral and account-related features.
 
-The trained model can help telecom companies identify customers who are likely to leave and take preventive actions to improve customer retention.
+The model helps identify customers likely to leave the service, allowing companies to take preventive actions to improve customer retention.
 
 ---
 
 ## How to Run the Project
 
-### Install dependencies
+Install dependencies
 
+```
 pip install -r requirements.txt
+```
 
-### Run data preprocessing
+Run data preprocessing
 
+```
 python src/data_preprocessing.py
+```
 
-### Train the model
+Train the model
 
+```
 python src/train_model.py
+```
 
-### Evaluate the model
+Evaluate the model
 
+```
 python src/evaluate_model.py
+```
 
 ---
 
 ## Future Improvements
 
-Possible improvements for this project include:
-
-- Using ensemble models such as Random Forest and XGBoost  
+- Use ensemble models such as Random Forest and XGBoost  
 - Hyperparameter tuning using GridSearchCV  
 - Feature importance analysis  
 - Model performance visualization  
